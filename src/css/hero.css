@@ -63,6 +63,9 @@
   max-width: 50%;
   text-align: right;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-image img {
@@ -72,6 +75,8 @@
   box-shadow: var(--shadow-lg);
   transform: perspective(1000px) rotateY(-5deg);
   transition: transform var(--transition-normal);
+  object-fit: cover;
+  object-position: center;
 }
 
 .hero-image img:hover {
@@ -114,8 +119,15 @@
   }
   
   .hero-image {
-    max-width: 90%;
+    max-width: 100%;
     margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-width: 100%;
+    transform: none;
   }
 
   .hero-content h1 {
@@ -141,6 +153,12 @@
   }
   
   .hero-image {
+    max-width: 100%;
+    padding: 0 var(--spacing-sm);
+  }
+
+  .hero-image img {
+    width: 100%;
     max-width: 100%;
   }
 }

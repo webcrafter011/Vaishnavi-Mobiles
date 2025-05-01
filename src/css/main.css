@@ -8,6 +8,8 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -17,6 +19,8 @@ body {
   color: var(--text-dark);
   background-color: var(--background-light);
   overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
 .container {
@@ -24,6 +28,7 @@ body {
   max-width: var(--container-xl);
   margin: 0 auto;
   padding: 0 var(--spacing-md);
+  position: relative;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -176,11 +181,14 @@ section {
   }
 
   .container {
-    max-width: var(--container-md);
+    max-width: 100%;
+    padding: 0 var(--spacing-md);
   }
   
   section {
     padding: var(--spacing-xl) 0;
+    width: 100%;
+    overflow: hidden;
   }
   
   .section-header {
@@ -195,8 +203,8 @@ section {
   }
 
   .container {
-    max-width: var(--container-sm);
-    padding: 0 var(--spacing-md);
+    max-width: 100%;
+    padding: 0 var(--spacing-sm);
   }
   
   .btn-primary, .btn-secondary {

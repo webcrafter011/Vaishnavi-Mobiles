@@ -21,6 +21,8 @@ const initHeader = () => {
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navLinks.classList.toggle('active');
+    // Prevent body scroll when menu is open
+    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
   });
 
   // Close mobile menu when clicking a link
@@ -28,7 +30,19 @@ const initHeader = () => {
     link.addEventListener('click', () => {
       hamburger.classList.remove('active');
       navLinks.classList.remove('active');
+      document.body.style.overflow = '';
     });
+  });
+
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('active') && 
+        !navLinks.contains(e.target) && 
+        !hamburger.contains(e.target)) {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
+      document.body.style.overflow = '';
+    }
   });
 
   // Header transparency and hide on scroll
